@@ -15,12 +15,30 @@
         function tab_sampah(){
             window.location.href="question_page.html"
         }
+        function akun(){
+            alert("akun")
+        }
+        function gift(){
+            alert("gift")
+        }
+        function home(){
+            alert("home")
+        }
+        function organik(){
+            alert("organik")
+        }
+        function anorganik(){
+            alert("anorganik")
+        }
+        function b3(){
+            alert("b3")
+        }
     </script>
 </head>
 <body>
     <header>
         <!-- <nav class="navbar navbar-light green"> -->
-            <h1 class="green text-center">Rubbish To Point</h1>
+            <h1 class="green text-center text-white">Rubbish To Point</h1>
         <!-- </nav> -->
     </header>
     <div class="container-fluid text-white pb-5 mb-4">
@@ -50,40 +68,46 @@
         </div>
         <div class="row mt-3">
             <div class="col-4">
-                <div class="card">
-                    <img class="card-img-top" src="./assets/img/trash_green.png" alt="Card image cap">
-                    <div class="card-title">
-                        <h5 class="card-text text-center text-dark">Organik</h5>
+                <a href="#">
+                    <div class="card">
+                        <img class="card-img-top" src="./assets/img/trash_green.png" alt="Card image cap">
+                        <div class="card-title">
+                            <h5 class="card-text text-center text-dark">Organik</h5>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-4">
-                <div class="card">
-                    <img class="card-img-top" src="./assets/img/trash_yellow.png" alt="Card image cap">
-                    <div class="card-title">
-                        <h5 class="card-text text-center text-dark">Anorganik</h5>
+                <a href="#">
+                    <div class="card">
+                        <img class="card-img-top" src="./assets/img/trash_yellow.png" alt="Card image cap">
+                        <div class="card-title">
+                            <h5 class="card-text text-center text-dark">Anorganik</h5>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-4">
-                <div class="card">
-                    <img class="card-img-top" src="./assets/img/trash_red.png" alt="Card image cap">
-                    <div class="card-title">
-                        <h5 class="card-text text-center text-dark">B3</h5>
+                <a href="#">
+                    <div class="card">
+                        <img class="card-img-top" src="./assets/img/trash_red.png" alt="Card image cap">
+                        <div class="card-title">
+                            <h5 class="card-text text-center text-dark">B3</h5>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
         <nav class="navbar navbar-expand-sm navbar-light green fixed-bottom">
             <div class="row w-100 ml-auto">
                 <div class="col-4">
-                    <img src="./assets/img/gift.png" style="width: 50px; height: 50px;" alt="image">
+                    <img src="./assets/img/gift.png" style="width: 50px; height: 50px;" alt="image" onclick="return gift()">
                 </div>
                 <div class="col-4">
-                    <img src="./assets/img/home.png" style="width: 50px; height: 50px;" alt="image">
+                    <img src="./assets/img/home.png" style="width: 50px; height: 50px;" alt="image" onclick="return home()">
                 </div>
                 <div class="col-4">
-                    <img src="./assets/img/person.png" style="width: 50px; height: 50px;" alt="image">
+                    <img src="./assets/img/person.png" style="width: 50px; height: 50px;" alt="image" onclick="return akun()">
                 </div>
             </div>
         </nav>
