@@ -1,0 +1,19 @@
+.organik {
+    background-color: green;
+    text-align: left;
+    width: 100%;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-left: 36px;
+    color: white;
+    font-size: larger;
+}
+
+.organik1 {
+    background-color: green;
+    width: 100%;
+    padding: 8px;
+    color: white;
+    box-sizing: border-box;
+    margin-top: 24px;
+}
