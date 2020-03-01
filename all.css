@@ -1,0 +1,28 @@
+.green{
+    height: 40px;
+    width: 100%;
+    background-color: #078117;
+}
+.green2{
+    background-color: #078117;
+    width: 100%;
+    font-size: x-large;
+    text-align: justify;
+}
+.green3{
+    background-color: #078117;
+    height: 30px;
+    width: 150px;
+    font-size: large;
+    text-align: center;
+}
+.green4{
+    background-color: #078117;
+    height: 150px;
+    width: 100% ;
+    font-size: medium;
+}
+.radius_green{
+    background-color:#078117;
+    border-radius: 7px 7px 0 0;
+}

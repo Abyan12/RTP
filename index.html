@@ -3,14 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hello World">
+    <meta name="theme-color" content="black"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="assets/img/trash_green.png">
+    <meta name="apple-mobile-web-app-title" content="RTP">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="assets/img/gift.png">
+    <link rel="manifest" href="manifest.json">
     <title>Home</title>
+    <script src="./src/js/jquery-new.js"></script>
+    <script src="./src/js/all.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <style>
-        .green{
-            background-color:#078117;
-            border-radius: 7px;
-        }
-    </style>
+    <link rel="stylesheet" href="all.css">
+    <!-- <style>
+    .green{
+        background-color:#078117;
+        border-radius: 7px;
+    }
+    </style> -->
     <script>
         function tab_sampah(){
             window.location.href="question_page.html"
@@ -38,19 +50,19 @@
 <body>
     <header>
         <!-- <nav class="navbar navbar-light green"> -->
-            <h1 class="green text-center text-white">Rubbish To Point</h1>
+            <h1 class="radius_green text-center text-white">Rubbish To Point</h1>
         <!-- </nav> -->
     </header>
     <div class="container-fluid text-white pb-5 mb-4">
         <div class="row mt-2">
-            <div class="col-7 green p-2">
+            <div class="col-7 radius_green p-2">
                 <!-- <img class="col-4 p-0 align-middle" src="assets/img/avatar.jpg" alt="avatar" style="width: 50px; height: 50px; border-radius: 50%;"> -->
                 <!-- <div class="col-8 d-inline-block align-middle"> -->
                     <h5 style="width: 10rem">Nama : Mikhael Hosea</h5><hr class="bg-white col-12 p-0">
                     <h5>ID : RTP - 2020</h5>
                 <!-- </div> -->
             </div>
-            <div class="col-4 text-center green ml-auto">
+            <div class="col-4 text-center radius_green ml-auto">
                 <h5>point</h5>
                 <hr class="bg-white col-12 p-0">
                 <h6>999+</h6>
@@ -58,11 +70,11 @@
         </div>
         <div class="row mt-2">
             <div class="col-12 text-center">
-                <button class="green w-100" style="height: 200px;" onclick="return tab_sampah()"><h2 class=" mx-auto text-white">Buang sampahmu sekarang !</h2></button>
+                <button class="radius_green w-100" style="height: 200px;" onclick="return tab_sampah()"><h2 class=" mx-auto text-white">Buang sampahmu sekarang !</h2></button>
             </div>
             <div class="row mt-3">
             </div>
-            <div class="col-12 green">
+            <div class="col-12 radius_green">
                 <h5 class="text-center">Klasifikasi Sampah dan Teknik Pengolahannya</h5>
             </div>
         </div>
@@ -98,21 +110,22 @@
                 </a>
             </div>
         </div>
-        <nav class="navbar navbar-expand-sm navbar-light green fixed-bottom">
+        <nav class="navbar navbar-expand-sm navbar-light radius_green fixed-bottom">
             <div class="row w-100 ml-auto">
                 <div class="col-4">
-                    <img src="./assets/img/gift.png" style="width: 50px; height: 50px;" alt="image" onclick="return gift()">
+                    <a href=""><img src="./assets/img/gift.png" style="width: 50px; height: 50px;" alt="image"></a>
                 </div>
                 <div class="col-4">
-                    <img src="./assets/img/home.png" style="width: 50px; height: 50px;" alt="image" onclick="return home()">
+                    <a href="index.html"><img src="./assets/img/home.png" style="width: 50px; height: 50px;" alt="image"></a>
                 </div>
                 <div class="col-4">
-                    <img src="./assets/img/person.png" style="width: 50px; height: 50px;" alt="image" onclick="return akun()">
+                    <a href="account-page.html"><img src="./assets/img/person.png" style="width: 50px; height: 50px;" alt="image"></a>
                 </div>
             </div>
         </nav>
     </div>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+<script src="src/js/app.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
