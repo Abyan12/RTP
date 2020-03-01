@@ -2,11 +2,12 @@
     height: 40px;
     width: 100%;
     background-color: #078117;
+    color: white;
 }
 .green2{
     background-color: #078117;
     width: 100%;
-    font-size: x-large;
+    font-size: large;
     text-align: justify;
 }
 .green3{
@@ -20,5 +21,10 @@
     background-color: #078117;
     height: 150px;
     width: 100% ;
-    font-size: medium;
+    font-size: large;
+}
+.green5{
+    height: 60px;
+    width: 100%;
+    background-color: #078117;
 }
