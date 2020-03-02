@@ -1,13 +1,13 @@
-function alert(icon,title,isi){
+function alert_info(title, isi) {
     Swal.fire({
-        allowOutsideClick:false,
-        icon:icon,
-        title:"<strong>" + title + "</strong>",
-        html:isi,
-        showCancelButton:true,
-    }).then((result)=>{
-        if(result.value){
-            window.location.href="index.html"
+        allowOutsideClick: false,
+        icon: "info",
+        title: "<strong>" + title + "</strong>",
+        html: isi,
+        showCancelButton: true,
+    }).then((result) => {
+        if (result.value) {
+            window.location.href = "index.html";
         }
-    })
+    });
 }
