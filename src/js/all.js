@@ -32,3 +32,61 @@ function alert_info(title, isi) {
         }
     });
 }
+
+function alert_danger(title,isi,link){
+    Swal.fire({
+        allowOutsideClick: false,
+        icon: "error",
+        title: "<strong>" + title + "</strong>",
+        html: isi,
+        // showCancelButton: true,
+    }).then((result) => {
+        if (result.value) {
+            window.location.href = link;
+        }
+    });
+}
+
+function alert_succes(title,isi,link){
+    Swal.fire({
+        allowOutsideClick: false,
+        icon: "success",
+        title: "<strong>" + title + "</strong>",
+        html: isi,
+        // showCancelButton: true,
+    }).then((result) => {
+        if (result.value) {
+            window.location.href = link;
+        }
+    });
+}
+
+$(document).ready(function(){
+    $("#login").click(()=>{
+        var email = $("#email").val()
+        var pass = $("#password").val()
+        let data = JSON.parse(window.localStorage.getItem('user'))
+        if(email === data.email && pass === data.password){
+            alert_succes("Succes","Login berhasil","index.html")
+        }
+        else{
+            alert_danger("Gagal","Gagal login","login.html")
+        }
+    })
+    $("#signup").click(()=>{
+        const data = {}
+        var email = $("#email").val()
+        var nama = $("#username").val()
+        var tel = $("#phone").val()
+        var password = $("#password").val()
+        data.name = nama
+        data.email = email
+        data.phone = tel
+        data.password = password
+        window.localStorage.setItem('user',JSON.stringify(data))
+        alert_succes("Succes Register","Thanks for register","login.html")
+    })
+    $("#signup").click(()=>{
+        window.location.href = "login.html"
+    })
+})

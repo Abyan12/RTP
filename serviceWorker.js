@@ -12,6 +12,8 @@ const assets = [
 const file=[
     "/index.html",
     "/account-page.html",
+    "/login.html",
+    "/register.html",
     "/question_page.html",
     "/src/js/all.js",
     "/all.css",
