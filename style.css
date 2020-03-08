@@ -3,6 +3,9 @@
     width: 100%;
     background-color: #078117;
     color: white;
+    position: fixed;
+    top: 0;
+    z-index: 99;
 }
 .green2{
     background-color: #078117;
@@ -16,6 +19,7 @@
     width: 150px;
     font-size: large;
     text-align: center;
+    color: white;
 }
 .green4{
     background-color: #078117;
@@ -27,4 +31,12 @@
     height: 60px;
     width: 100%;
     background-color: #078117;
+}
+.container{
+    font-size: larger;
+    position: absolute;
+    top: 100px;
+}
+h5 {
+    font-weight: bold;
 }
