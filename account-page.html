@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="./all.css">
     <title>Account Page</title>
+    <script>
+        $(document).ready(()=>{
+            var user = JSON.parse(window.localStorage.getItem('user'))
+            $("#name").append(user.username)
+            $("#rtp").append("")
+            $("#email").append(user.email)
+            $("#telp").append(user.telephone)
+        })
+    </script>
 </head>
 <body>
 <div class="green text-center text-white">
@@ -19,16 +28,16 @@
         <div class="col-5 green3">
             <p> POINT : 99+</p>
         </div>
-        <div class="col-5 ml-auto green3">
-            <p>REDEEM</p>
+        <div class="col-5 ml-auto mr-3">
+            <button id="reedem" class="green3 text-white">REEDEM</button>
         </div>
     </div>
     <div class="row mt-4 text-blue">
         <div class="col-xs-12 green2">
-            <p>Name : Abyan</p>
-            <p>ID : RTP-00134</p>
-            <p>E-mail : a*****io@gmail.com</p>
-            <p>Telp  : 0******1</p>
+            <p id="name">Name : </p>
+            <p id="rtp">ID : </p>
+            <p id="email">E-mail : </p>
+            <p id="telp">Telp  : </p>
         </div>
     </div>
     <div class="row mt-4 text-blue">

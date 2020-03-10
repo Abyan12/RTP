@@ -64,29 +64,61 @@ function alert_succes(title,isi,link){
 $(document).ready(function(){
     $("#login").click(()=>{
         var email = $("#email").val()
-        var pass = $("#password").val()
-        let data = JSON.parse(window.localStorage.getItem('user'))
-        if(email === data.email && pass === data.password){
-            alert_succes("Succes","Login berhasil","index.html")
-        }
-        else{
-            alert_danger("Gagal","Gagal login","login.html")
-        }
+        var password = $("#password").val()
+        $.ajax({
+            type:"POST",
+            url:"http://localhost:3000/login",
+            headers:{
+                "Access-Control-Allow-Origin": "*",
+                "Content-Type": "application/json"
+            },
+            data:JSON.stringify({
+                email:email,
+                password:password
+            }),
+            success:(res)=>{
+                if(res == "gagal"){
+                    alert_danger(res,'','login.html')
+                }
+            },
+            error:()=>{
+                alert_danger('Gagal','Cek kembail email/password!','login.html')
+            }
+        })
     })
     $("#signup").click(()=>{
         const data = {}
         var email = $("#email").val()
-        var nama = $("#username").val()
+        var username = $("#username").val()
         var tel = $("#phone").val()
         var password = $("#password").val()
-        data.name = nama
+        var id = "RTP-"+username.split(" ",1)
+        data.id = id
         data.email = email
-        data.phone = tel
+        data.username = username
         data.password = password
-        window.localStorage.setItem('user',JSON.stringify(data))
-        alert_succes("Succes Register","Thanks for register","login.html")
+        data.telephone = tel
+        // console.log(data)
+        $.ajax({
+            type:"POST",
+            // dataType:"JSON",
+            url:"http://localhost:3000/register",
+            data:JSON.stringify(data),
+            headers:{
+                "Access-Control-Allow-Origin": "*",
+                "Content-Type": "application/json"
+            },
+            success:()=>{
+                alert_succes('Berhasil','Klik OK untuk ke halaman index','login.html')
+            },
+            error:()=>{
+                alert_danger('Gagal','Cek datamu','register.html')
+            }
+        })
+        // window.localStorage.setItem('user',JSON.stringify(data))
+        // alert_succes("Succes Register","Thanks for register","login.html")
     })
-    $("#signup").click(()=>{
-        window.location.href = "login.html"
-    })
+    // $("#signup").click(()=>{
+    //     window.location.href = "login.html"
+    // })
 })

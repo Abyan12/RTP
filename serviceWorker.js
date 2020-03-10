@@ -1,25 +1,29 @@
 let rtp = "rtp-v1"
 const assets = [
-    "/assets/img/avatar.jpg",
-    "/assets/img/gift.svg",
-    "/assets/img/home.svg",
-    "/assets/img/person.svg",
-    "/assets/img/recycle-sign.png",
-    "/assets/img/trash_green.svg",
-    "/assets/img/trash_red.svg",
-    "/assets/img/trash_yellow.svg",
+    "./assets/img/avatar.jpg",
+    "./assets/img/gift.svg",
+    "./assets/img/home.svg",
+    "./assets/img/person.svg",
+    "./assets/img/recycle-sign.png",
+    "./assets/img/trash_green.svg",
+    "./assets/img/trash_red.svg",
+    "./assets/img/trash_yellow.svg",
 ]
 const file=[
-    "/index.html",
-    "/account-page.html",
-    "/login.html",
-    "/register.html",
-    "/question_page.html",
-    "/src/js/all.js",
-    "/all.css",
-    "/src/js/jquery-new.js",
-    "/sweetalert/dist/sweetalert2.all.js",
-    "/sweetalert/dist/sweetalert2.css"
+    "./index.html",
+    "./account-page.html",
+    "./login.html",
+    "./register.html",
+    "./question_page.html",
+    "./map.html",
+    "./manifest.json",
+    "./style.css",
+    "./login-page.css",
+    "./src/js/all.js",
+    "./all.css",
+    "./src/js/jquery-new.js",
+    "./sweetalert/dist/sweetalert2.all.js",
+    "./sweetalert/dist/sweetalert2.css"
 ]
 
 self.addEventListener('install', (event) => {
