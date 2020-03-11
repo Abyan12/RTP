@@ -6,15 +6,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./src/js/all.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="sweetalert/dist/sweetalert2.css">
+    <script src="sweetalert/dist/sweetalert2.all.js"></script>
     <link rel="stylesheet" href="./all.css">
     <title>Account Page</title>
     <script>
         $(document).ready(()=>{
-            var user = JSON.parse(window.localStorage.getItem('user'))
-            $("#name").append(user.username)
-            $("#rtp").append("")
-            $("#email").append(user.email)
-            $("#telp").append(user.telephone)
+            var user  = window.localStorage.getItem('email')
+            // console.log(user)
+            $.ajax({
+                type:"GET",
+                url:"http://localhost:3000/list?email="+user,
+                success:(res)=>{
+                    $(".poin p").append(res.poin)
+                    $("#name").append(res.username)
+                    $("#rtp").append(res.id)
+                    $("#email").append(res.email)
+                    $("#telp").append(res.telephone)
+                },
+                error:(error)=>{
+                    console.log("error",error)
+                }
+            })
         })
     </script>
 </head>
@@ -25,8 +38,8 @@
 
 <div class="container-fluid text-white">
     <div class="row mt-4">
-        <div class="col-5 green3">
-            <p> POINT : 99+</p>
+        <div class="col-5 green3 poin">
+            <p> POINT : </p>
         </div>
         <div class="col-5 ml-auto mr-3">
             <button id="reedem" class="green3 text-white">REEDEM</button>

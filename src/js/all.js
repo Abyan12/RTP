@@ -61,6 +61,41 @@ function alert_succes(title,isi,link){
     });
 }
 
+function textInput(){
+    var user = window.localStorage.getItem('email')
+    Swal.fire({
+        title:"Masukan kode :",
+        input:'text',
+        inputAttributes:{
+            autocapitalize:'off'
+        },
+        showCancelButton:true,
+        confirmButtonText:'OK',
+    }).then((result)=>{
+        $.ajax({
+            type:"POST",
+            url:"http://localhost:3000/getPoint",
+            dataType:"JSON",
+            headers:{
+                "Access-Control-Allow-Origin": "*",
+                "Content-Type": "application/json"
+            },
+            data:JSON.stringify({
+                email: user,
+                token:result.value
+            }),
+            success:(res)=>{
+                // var poin = user[poin] = res
+                // localStorage.add('user',JSON.stringify(poin))
+                alert_succes('Berhasil',`Total poin bertambah :${res}`,'account-page.html')
+            },
+            error:(res)=>{
+                console.log(res)
+            }
+        })
+    })
+}
+
 $(document).ready(function(){
     $("#login").click(()=>{
         var email = $("#email").val()
@@ -79,6 +114,12 @@ $(document).ready(function(){
             success:(res)=>{
                 if(res == "gagal"){
                     alert_danger(res,'','login.html')
+                }else if(res == "password salah"){
+                    alert_danger(res,'','login.html')
+                }
+                else{
+                    window.localStorage.setItem('email',res.email)
+                    alert_succes('Berhasil',"Klik ok untuk melanjutkannya","index.html")
                 }
             },
             error:()=>{
@@ -98,6 +139,7 @@ $(document).ready(function(){
         data.username = username
         data.password = password
         data.telephone = tel
+        data.poin = 0
         // console.log(data)
         $.ajax({
             type:"POST",
@@ -118,7 +160,7 @@ $(document).ready(function(){
         // window.localStorage.setItem('user',JSON.stringify(data))
         // alert_succes("Succes Register","Thanks for register","login.html")
     })
-    // $("#signup").click(()=>{
-    //     window.location.href = "login.html"
-    // })
+    $("#reedem").click(()=>{
+        textInput()
+    })
 })
