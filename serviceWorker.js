@@ -8,6 +8,7 @@ const assets = [
     "./assets/img/trash_green.svg",
     "./assets/img/trash_red.svg",
     "./assets/img/trash_yellow.svg",
+    "./assets/img/yuru.jpg"
 ]
 const file=[
     "./index.html",
@@ -16,7 +17,6 @@ const file=[
     "./register.html",
     "./question_page.html",
     "./map.html",
-    "./manifest.json",
     "./style.css",
     "./login-page.css",
     "./src/js/all.js",

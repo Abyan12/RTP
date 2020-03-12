@@ -12,20 +12,26 @@
     <title>Account Page</title>
     <script>
         $(document).ready(()=>{
-            var user  = window.localStorage.getItem('email')
             // console.log(user)
             $.ajax({
                 type:"GET",
-                url:"http://localhost:3000/list?email="+user,
+                url:"https://rtp-v1.glitch.me/list?email="+window.localStorage.getItem('email'),
                 success:(res)=>{
-                    $(".poin p").append(res.poin)
-                    $("#name").append(res.username)
-                    $("#rtp").append(res.id)
-                    $("#email").append(res.email)
-                    $("#telp").append(res.telephone)
+                    if(res == null){
+                        $("#all").html("<img src='./assets/img/yuru.jpg' style='width:300px;height:300px'>"
+                        +"<h2 class='text-center' style='color:black'><a href='login.html'>Login dulu ya </a> atau <a href='register.html'> Register</a> OKAY :)</h2>"
+                        )
+                    }else{
+                        // console.log(res)
+                        $(".poin p").append(res.poin)
+                        $("#name").append(res.username)
+                        $("#rtp").append(res.id)
+                        $("#email").append(res.email)
+                        $("#telp").append(res.telephone)
+                    }
                 },
-                error:(error)=>{
-                    console.log("error",error)
+                error:()=>{
+                    console.log("error")
                 }
             })
         })
@@ -37,28 +43,30 @@
 </div>
 
 <div class="container-fluid text-white">
-    <div class="row mt-4">
-        <div class="col-5 green3 poin">
-            <p> POINT : </p>
+    <div id="all">
+        <div class="row mt-4">
+            <div class="col-5 green3 poin">
+                <p> POINT : </p>
+            </div>
+            <div class="col-5 ml-auto mr-3">
+                <button id="reedem" class="green3 text-white">REEDEM</button>
+            </div>
         </div>
-        <div class="col-5 ml-auto mr-3">
-            <button id="reedem" class="green3 text-white">REEDEM</button>
+        <div class="row mt-4 text-blue">
+            <div class="col-xs-12 green2">
+                <p id="name">Name : </p>
+                <p id="rtp">ID : </p>
+                <p id="email">E-mail : </p>
+                <p id="telp">Telp  : </p>
+            </div>
         </div>
-    </div>
-    <div class="row mt-4 text-blue">
-        <div class="col-xs-12 green2">
-            <p id="name">Name : </p>
-            <p id="rtp">ID : </p>
-            <p id="email">E-mail : </p>
-            <p id="telp">Telp  : </p>
-        </div>
-    </div>
-    <div class="row mt-4 text-blue">
-        <div class="col-xs-12 green4">
-            <h5 style="text-align: center;">History pembuangan sampah </h5>
-            <br>
-            <p>Banyak membuang sampah :</p>
-            <p>Jumlah membuang sampah :</p>
+        <div class="row mt-4 text-blue">
+            <div class="col-xs-12 green4">
+                <h5 style="text-align: center;">History pembuangan sampah </h5>
+                <br>
+                <p>Banyak membuang sampah :</p>
+                <p>Jumlah membuang sampah :</p>
+            </div>
         </div>
     </div>
 </div>

@@ -74,7 +74,7 @@ function textInput(){
     }).then((result)=>{
         $.ajax({
             type:"POST",
-            url:"http://localhost:3000/getPoint",
+            url:"https://rtp-v1.glitch.me/getPoint",
             dataType:"JSON",
             headers:{
                 "Access-Control-Allow-Origin": "*",
@@ -102,7 +102,7 @@ $(document).ready(function(){
         var password = $("#password").val()
         $.ajax({
             type:"POST",
-            url:"http://localhost:3000/login",
+            url:"https://rtp-v1.glitch.me/login",
             headers:{
                 "Access-Control-Allow-Origin": "*",
                 "Content-Type": "application/json"
@@ -144,7 +144,7 @@ $(document).ready(function(){
         $.ajax({
             type:"POST",
             // dataType:"JSON",
-            url:"http://localhost:3000/register",
+            url:"https://rtp-v1.glitch.me/register",
             data:JSON.stringify(data),
             headers:{
                 "Access-Control-Allow-Origin": "*",
