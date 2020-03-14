@@ -19,7 +19,7 @@ function initMap(){
     }
 }
 
-function alert_info(title, isi) {
+function alert_info(title, isi,link) {
     Swal.fire({
         allowOutsideClick: false,
         icon: "info",
@@ -28,7 +28,13 @@ function alert_info(title, isi) {
         showCancelButton: true,
     }).then((result) => {
         if (result.value) {
-            window.location.href = "prize-page.html";
+            // Swal.fire(
+            //     "<strong>Yeay, kamu berhasil menukarkan barang ini</strong>",
+            //     "Barang ini bisa kamu ambil di bank sampah terdekat",
+            //     "success"
+            // )
+            alert_succes('Yeay, kamu berhasil menukarkan barang ini','kamu bisa mengambilnya di bank sampah terdekat','prize-page.html')
+            // window.location.href = link;
         }
     });
 }

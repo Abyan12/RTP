@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animated.css">
     <link rel="stylesheet" href="sweetalert/dist/sweetalert2.css">
     <script src="sweetalert/dist/sweetalert2.all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -13,13 +14,13 @@
 
     <script>
         $(document).ready(function(){
-            $("#tab").hide()
+            // $("#tab").hide()
+            // $("button#prize").click(function(){
+            //     $("#tab").show()
+            //     $("#showF").hide()
+            // })
             $("button#prize").click(function(){
-                $("#tab").show()
-                $("#showF").hide()
-            })
-            $("button#prize").click(function(){
-                alert_info('Apa kamu yakin akan menukarkan point mu dengan ini ?')
+                alert_info('Apa kamu yakin akan menukarkan point mu dengan ini ?', 'Pastikan pointmu cukup untuk menukarkan barang ini')
             })
             $("#plastik").click(()=>{
                 window.location.href = "map.html"
