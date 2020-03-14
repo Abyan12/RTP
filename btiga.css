@@ -1,5 +1,5 @@
 .organik1 {
-    background-color: green;
+    background-color: #f73528;
     width: 100%;
     padding: 8px;
     color: white;
@@ -10,7 +10,7 @@
 }
 
 .wrn {
-    background-color: green;
+    background-color: #f73528;
     color: white;
 }
 
@@ -24,11 +24,10 @@
 }
 
 .nav-bar {
-    background-color:#078117;
+    background-color:#f73528;
     top: 0;
     z-index: 99;
     position: fixed;
     left: 0;
     width: 100%;
 }
-
