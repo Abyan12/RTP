@@ -13,16 +13,27 @@
     <script>
         $(document).ready(()=>{
             // console.log(user)
+            $("#load").hide()
+            $("#all").hide()
             $.ajax({
                 type:"GET",
                 url:"https://rtp-v1.glitch.me/list?email="+window.localStorage.getItem('email'),
+                beforeSend:()=>{
+                    setInterval(()=>{
+                        $("#load").show()
+                        $("#all").hide()
+                    },1000)
+                },
                 success:(res)=>{
                     if(res == null){
-                        $("#all").html("<img src='./assets/img/yuru.jpg' style='width:300px;height:300px'>"
-                        +"<h2 class='text-center' style='color:black'><a href='login.html'>Login dulu ya </a> atau <a href='register.html'> Register</a> OKAY :)</h2>"
+                        // $("#all").show()
+                        $("#all").html("<img src='./assets/img/yuru.jpg' class='mx-auto text-center' style='width:300px;height:300px'>"
+                        +"<h3 class='text-center' style='color:black'>"
+                        +"<a href='login.html'>Login&nbsp;</a>dulu ya&nbsp;atau&nbsp;"
+                        +"<a href='register.html'>Register</a>&nbsp;OKAY :)</h3>"
                         )
                     }else{
-                        // console.log(res)
+                        // $("#all").show()
                         $(".poin p").append(res.poin)
                         $("#name").append(res.username)
                         $("#rtp").append(res.id)
@@ -32,6 +43,9 @@
                 },
                 error:()=>{
                     console.log("error")
+                },
+                complete:()=>{
+                    $("#load").hide()
                 }
             })
         })
@@ -43,7 +57,8 @@
 </div>
 
 <div class="container-fluid text-white">
-    <div id="all">
+    <div id="load"><img id='load' src='./assets/img/loading.gif' width:300px /></div>
+    <div id="all"></div>
         <div class="row mt-4">
             <div class="col-5 green3 poin">
                 <p> POINT : </p>

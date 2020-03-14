@@ -1,5 +1,5 @@
-var map,marker;
 function initMap(){
+    var map,marker;
     var lat = new google.maps.LatLng(-6.21,106.85)
     var loc = [
         ['kemang','-6.2777619','106.8026676'],
