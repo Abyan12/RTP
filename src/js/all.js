@@ -1,25 +1,4 @@
-function initMap(){
-    var map,marker;
-    var lat = new google.maps.LatLng(-6.21,106.85)
-    var loc = [
-        ['kemang','-6.2777619','106.8026676'],
-        ['Jakarta','-6.21','106.85']
-    ];
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: lat,
-        zoom: 12
-    });
-    for(let i=0;i< loc.length;i++){
-        marker = new google.maps.Marker({
-            position: new google.maps.LatLng(loc[i][1],loc[i][2]),
-            map: map,
-            title:loc[i][0]
-        })
-        // console.log(loc[i][1])
-    }
-}
-
-function alert_info(title, isi) {
+function alert_info(title, isi,link) {
     Swal.fire({
         allowOutsideClick: false,
         icon: "info",
@@ -28,9 +7,41 @@ function alert_info(title, isi) {
         showCancelButton: true,
     }).then((result) => {
         if (result.value) {
-            window.location.href = "index.html";
+            window.location.href = link
         }
     });
+}
+
+function prize_info(title,isi){
+    Swal.fire({
+        allowOutsideClick:false,
+        icon:"info",
+        title:"<strong>"+ title +"</strong>",
+        html:isi,
+        showCancelButton:true,
+    }).then((result)=>{
+        if(result.value){
+            var settings = {
+                "url": "https://rtp-v1.glitch.me/prize",
+                "method": "POST",
+                "timeout": 0,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "data": JSON.stringify({"poin":10,"email":localStorage.getItem('email')}),
+            };
+            $.ajax(settings).done(function (response) {
+                if(response == "Email tidak ada"){
+                    alert_info('Email tidak ada',`${response}`,'prize-page.html')
+                }else if(response == "Point kamu kurang"){
+                    alert_info('Point Kurang',`${response}`,'prize-page.html')
+                }else{
+                    alert_succes('Berhasil','','prize-page.html')
+                }
+            });
+            // alert_succes('Yeay, kamu berhasil menukarkan barang ini','kamu bisa mengambilnya di bank sampah terdekat','prize-page.html')
+        }
+    })
 }
 
 function alert_danger(title,isi,link){
@@ -55,7 +66,7 @@ function alert_succes(title,isi,link){
         html: isi,
         // showCancelButton: true,
     }).then((result) => {
-        if (result.value) {
+        if(result.value) {
             window.location.href = link;
         }
     });
@@ -87,7 +98,11 @@ function textInput(){
             success:(res)=>{
                 // var poin = user[poin] = res
                 // localStorage.add('user',JSON.stringify(poin))
-                alert_succes('Berhasil',`Total poin bertambah :${res}`,'account-page.html')
+                if(res == "limits"){
+                    alert_danger(`${res}`,'Token limit','account-page.html')
+                }else{
+                    alert_succes('Berhasil',`Total poin bertambah :${res}`,'account-page.html')
+                }
             },
             error:(res)=>{
                 console.log(res)

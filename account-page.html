@@ -12,28 +12,22 @@
     <title>Account Page</title>
     <script>
         $(document).ready(()=>{
-            // console.log(user)
-            $("#load").hide()
             $("#all").hide()
             $.ajax({
                 type:"GET",
                 url:"https://rtp-v1.glitch.me/list?email="+window.localStorage.getItem('email'),
-                beforeSend:()=>{
-                    setInterval(()=>{
-                        $("#load").show()
-                        $("#all").hide()
-                    },1000)
-                },
                 success:(res)=>{
                     if(res == null){
-                        // $("#all").show()
-                        $("#all").html("<img src='./assets/img/yuru.jpg' class='mx-auto text-center' style='width:300px;height:300px'>"
+                        $("#load").hide()
+                        $("#all").show()
+                        $("#all").html("<img src='./assets/img/yuru.svg' class='mx-auto text-center' style='width:300px;height:300px'>"
                         +"<h3 class='text-center' style='color:black'>"
                         +"<a href='login.html'>Login&nbsp;</a>dulu ya&nbsp;atau&nbsp;"
                         +"<a href='register.html'>Register</a>&nbsp;OKAY :)</h3>"
                         )
                     }else{
-                        // $("#all").show()
+                        $("#load").hide()
+                        $("#all").show()
                         $(".poin p").append(res.poin)
                         $("#name").append(res.username)
                         $("#rtp").append(res.id)
@@ -44,9 +38,6 @@
                 error:()=>{
                     console.log("error")
                 },
-                complete:()=>{
-                    $("#load").hide()
-                }
             })
         })
     </script>
@@ -56,9 +47,9 @@
     <h2>ACCOUNT</h2>
 </div>
 
-<div class="container-fluid text-white">
-    <div id="load"><img id='load' src='./assets/img/loading.gif' width:300px /></div>
-    <div id="all"></div>
+<div class="container-fluid text-white pt-4">
+    <!-- <img id='load' src='./assets/img/loading.gif' width:300px /> -->
+    <div id="all">
         <div class="row mt-4">
             <div class="col-5 green3 poin">
                 <p> POINT : </p>
@@ -88,7 +79,7 @@
 <nav class="navbar navbar-expand-sm navbar-light radius_green fixed-bottom">
     <div class="row w-100 ml-auto">
         <div class="col-4">
-            <a href=""><img src="./assets/img/gift.svg" style="width: 50px; height: 50px;" alt="image"></a>
+            <a href="prize-page.html"><img src="./assets/img/gift.svg" style="width: 50px; height: 50px;" alt="image"></a>
         </div>
         <div class="col-4">
             <a href="index.html"><img src="./assets/img/home.svg" style="width: 50px; height: 50px;" alt="image"></a>
