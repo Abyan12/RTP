@@ -1,11 +1,3 @@
-# RTP
-**Aplikasi Rubbish to Point ( Aplikasi pengolaan sampah )**
+# RTP **RUBBISH TO POINT**
 
-```javascript
-    function hello(){
-        console.log("Hello World!")
-    }
-```
->APLIKASI PWA
-
-**not new**
+![stack Overflow](http://lmsotfy.com/so.png)

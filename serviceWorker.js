@@ -1,4 +1,4 @@
-let rtp = "rtp-v1"
+let rtp = "rtp-v2"
 const assets = [
     "./assets/img/gift.svg",
     "./assets/img/home.svg",
@@ -7,9 +7,10 @@ const assets = [
     "./assets/img/trash_green.svg",
     "./assets/img/trash_red.svg",
     "./assets/img/trash_yellow.svg",
-    "./assets/img/yuru.svg",
+    "./assets/img/yuru.jpg",
     "./assets/img/hydro-flask.svg",
     "./assets/img/limbah-bahan-kimia.svg",
+    "./assets/img/limbah-pabrik.svg",
     "./assets/img/reusable-mask.svg",
     "./assets/img/reusable-spoon-and-fork.svg",
     "./assets/img/sampah-batu-baterai.svg",
@@ -22,6 +23,7 @@ const assets = [
     "./assets/img/sampah-plastik.svg",
     "./assets/img/sampah-sisa-makanan.svg",
     "./assets/img/sampah-telur.svg",
+    "./assets/img/stainless-straw.svg"
 ]
 const file=[
     "./index.html",,
