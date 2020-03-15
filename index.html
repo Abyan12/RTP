@@ -48,6 +48,12 @@
                         $("#rtp").append(res.id)
                         $("#email").append(res.email)
                         $("#telp").append(res.telephone)
+                    }else{
+                        $("#pembuka").html(
+                            "<div class='col-12 radius_green p-2'>"+
+                            '<h5 style="width: 10rem" id="name">Selamat Datang</h5>'+
+                            "</div>"
+                        )
                     }
                 },
                 error:()=>{
@@ -64,6 +70,7 @@
         <!-- </nav> -->
     </header>
     <div class="container-fluid text-white pb-5 mb-4">
+        <div id="pembuka">
         <div class="row mt-2">
             <div class="col-7 radius_green p-2">
                 <!-- <img class="col-4 p-0 align-middle" src="assets/img/avatar.jpg" alt="avatar" style="width: 50px; height: 50px; border-radius: 50%;"> -->
@@ -78,18 +85,19 @@
                 <h6 id='poin'></h6>
             </div>
         </div>
+        </div>
         <div class="row mt-2">
             <div class="col-12 text-center">
                 <button class="radius_green w-100" style="height: 200px;" onclick="return tab_sampah()"><h2 class=" mx-auto text-white">Buang sampahmu sekarang !</h2></button>
             </div>
             <div class="row mt-3">
             </div>
+        </div>
+        <div class="row mt-3">
             <div class="col-12 radius_green">
                 <h5 class="text-center">Klasifikasi Sampah</h5>
             </div>
-        </div>
-        <div class="row mt-3">
-            <div class="col-4">
+            <div class="col-4 pt-4">
                 <a href="organik.html">
                     <div class="card">
                         <img class="card-img-top" src="./assets/img/trash_green.svg" alt="Card image cap">
@@ -99,7 +107,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-4">
+            <div class="col-4 pt-4">
                 <a href="anor.html">
                     <div class="card">
                         <img class="card-img-top" src="./assets/img/trash_yellow.svg" alt="Card image cap">
@@ -109,7 +117,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-4">
+            <div class="col-4 pt-4">
                 <a href="btiga.html">
                     <div class="card">
                         <img class="card-img-top" src="./assets/img/trash_red.svg" alt="Card image cap">
@@ -120,10 +128,10 @@
                 </a>
             </div>
         </div>
-        <nav class="navbar navbar-expand-sm navbar-light radius_green fixed-bottom">
+        <nav class="navbar navbar-expand-sm navbar-light radius_green fixed-bottom" style="background-color: black;">
             <div class="row w-100 ml-auto">
                 <div class="col-4">
-                    <a href=""><img src="./assets/img/gift.svg" style="width: 50px; height: 50px;" alt="image"></a>
+                    <a href="prize-page.html"><img src="./assets/img/gift.svg" style="width: 50px; height: 50px;" alt="image"></a>
                 </div>
                 <div class="col-4">
                     <a href="index.html"><img src="./assets/img/home.svg" style="width: 50px; height: 50px;" alt="image"></a>

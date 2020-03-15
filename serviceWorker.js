@@ -2,18 +2,18 @@ let rtp = "rtp-v2"
 const assets = [
     "./assets/img/gift.svg",
     "./assets/img/home.svg",
+    "./assets/img/hydro-flask.svg",
+    "./assets/img/limbah-bahan-kimia.svg",
+    "./assets/img/limbah-pabrik.svg",
     "./assets/img/person.svg",
     "./assets/img/recycle-sign.svg",
+    "./assets/img/reusable-mask.svg",
+    "./assets/img/reusable-spoon-and-fork.svg",
+    "./assets/img/sampah-batu-baterai.svg",
     "./assets/img/trash_green.svg",
     "./assets/img/trash_red.svg",
     "./assets/img/trash_yellow.svg",
     "./assets/img/yuru.jpg",
-    "./assets/img/hydro-flask.svg",
-    "./assets/img/limbah-bahan-kimia.svg",
-    "./assets/img/limbah-pabrik.svg",
-    "./assets/img/reusable-mask.svg",
-    "./assets/img/reusable-spoon-and-fork.svg",
-    "./assets/img/sampah-batu-baterai.svg",
     "./assets/img/sampah-daun.svg",
     "./assets/img/sampah-detergen.svg",
     "./assets/img/sampah-kaca.svg",
@@ -26,14 +26,12 @@ const assets = [
     "./assets/img/stainless-straw.svg"
 ]
 const file=[
-    "./index.html",,
-    "./anor.html",
+    "./index.html",
     "./account-page.html",
     "./login.html",
     "./register.html",
     "./question_page.html",
     "./prize-page.html",
-    "./location.json",
     "./map.html",
     "./style.css",
     "./login-page.css",
@@ -54,7 +52,7 @@ self.addEventListener('install', (event) => {
         caches.open(rtp).then((cache) => {
             return cache.addAll(assets.concat(file))
         }).catch((err)=>{
-            console.error(err)
+            // console.error(err)
             return new Promise((resolve,reject)=>{
                 reject("error"+err)
             })
